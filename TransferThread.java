@@ -1,12 +1,15 @@
 class TransferThread extends Thread
 {
+  private Banco banco;
+  private int contaorigem;
+  
   public TransferThread (Banco b, int de) 
   {
     banco = b;
     contaorigem = de;
   }
 
-  public void run ( )
+  public synchronized void run ( )
   {
     try
     {
@@ -19,6 +22,4 @@ class TransferThread extends Thread
       }
     } catch (InterruptedException e) {}
   }
-  private Banco banco;
-  private int contaorigem;
 }
