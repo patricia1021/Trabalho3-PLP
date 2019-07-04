@@ -11,10 +11,14 @@ public class Banco
     contas.add("Luciana";val_inicio);
     contas.add("Patricia";val_inicio);
         
-    public void transferencia(Conta de,Conta para,double valor)
+    public synchronized void transferencia(Conta de,Conta para,double valor)
     {
-        wait();
+        while(de.getSaldo() < valor)
+            wait();
+        
+        de.setSaldo(de.getSaldo() - valor);
+        para.setSaldo(para.getSaldo()+ valor);
+
         notify();
     }
 }
-
