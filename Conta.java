@@ -8,4 +8,16 @@ public class Conta
         this.nome = nome;
         this.saldo = saldo;
    }
+
+   public double getSaldo(){
+       return this.saldo;
+   }
+
+   public String getNome(){
+       return this.nome;
+    }
+
+    public void setSaldo(Double saldo){
+        this.saldo = saldo;
+    }
 }
