@@ -26,7 +26,8 @@ class TransferThread extends Thread
         double valor = ((Math.random()*100));
 
         Conta contadestino = (Conta) banco.getContas().get(de);
-        System.out.println("Transferencia de "+ valor  + " conta origem: "+ contaorigem.getNome()  +" conta destino: " + contadestino.getNome());
+        System.out.println("Transferencia de "+ valor  + " conta origem: "+ contaorigem.getNome()  
+        +" conta destino: " + contadestino.getNome());
         
         banco.transferencia(contaorigem, contadestino, valor);
         // define o valor a ser transferido aleatoriamente
