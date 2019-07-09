@@ -28,8 +28,13 @@ public class Banco
 
         notify();
     }
-
+    
+    public Conta getConta(int index){
+        return (Conta) getContas().get(index);
+    }
+    
     public ArrayList getContas(){
         return contas;
     }
+
 }
